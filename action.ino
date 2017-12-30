@@ -18,8 +18,7 @@ void action()
 		//musicPlayer.stopPlaying();          //---- האם נכון?    not right should be playSound()
 		valves(0, 0);                        // 2 leds in motor (x,y)( x- 1=blink leds 0=off,  y- 1= fast blink 0=slow blink 
 		pumps(0, 0);					    // water and air pumps fan motor (0=off 1=on slow, 1=fast 0=slow)
-		//motorNeopixle(0,0);                    // 42 neopixle on board the motor base (1,2)(1- 1=blink  0=off, 2- 1= fast blink 0=slow blink                                
-		//musicPlayer.sineTest(0x44, 500);       // Make a tone to indicate VS1053 is working
+										   
 		//Serial.println(isMP3On);
 	}
 
@@ -28,7 +27,7 @@ void action()
 		Drive(0, 0, 0, 0);							// stop l and r motors
 		valves(1, 0);                    //rpm 1000 = slow
 		pumps(1, 0);                          // water and air pumps fan motor (0=off 1=on slow, 1=fast 0=slow)
-		playSound("TRACK02.MP3");          // low rpm sound 1000rpm
+		//playSound("TRACK02.MP3");          // low rpm sound 1000rpm
 	}
 
 	if (motorOn == 1 && driveEnable == 1)        // verify that no driving if first set F or R and only then drive pedal push
@@ -36,8 +35,10 @@ void action()
 		//playSound.sineTest(0x44, 500);    // Make a tone to indicate VS1053 is working
 		valves(1, 1);                     //rpm  = fast
 		pumps(1, 1);                           //rpm  = fast
-		//motorNeopixle(1,0);                 //rate  = fast
 		//playSound("TRACK03.MP3");          // High  rpm sound 
+
+
+
 		if (drivePedal == 1) {
 			if (forwardOn == 1 & reverseOn  == 0) {
 					Drive(1, 1, speedL, speedR);
@@ -48,8 +49,13 @@ void action()
 		}
 		}
 	}
+
+
+
+
 	if(steeringBtmBlack != steeringBtmBlackOld)
 	{
+		Serial.println(steeringBtmBlack);
 		steeringBtmBlack = steeringBtmBlackOld;
 		nextSong(steeringBtmBlack);
 	}

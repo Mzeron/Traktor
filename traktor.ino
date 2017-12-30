@@ -75,14 +75,13 @@ void setup()
   turnIni();
   driveIni();
   neopixleIni();
-
-//playSound("TRACK02.MP3");
+//playSound("TRACK01.MP3");
 }//---END SETUP routine  ---
   
 //  -------   LOOP     ROUTINE  ---------------
 void loop() 
 {
-	
+	//Serial.println(isMP3On);
   readBottoms();
   action();
   runNewPixle();

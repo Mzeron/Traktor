@@ -130,7 +130,7 @@ void readBottoms ()         // ----  Called from whithin LOOP routine
             {
               Serial.println(" [ WHEEL SW  1  ] ");
             
-              steeringBtmBlack = random( 1,11);         // random switch !!!!!!!!!!!!!!!!!!!!
+              steeringBtmBlack = random( 0,110);         // random switch !!!!!!!!!!!!!!!!!!!!
             }
         }
       lastWheelBtm1State = wheelBtm1State;

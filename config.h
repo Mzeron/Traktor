@@ -17,14 +17,17 @@
 #define valve1        A1      // LED 1+2 pin  // blinking motor valve pin number 
 #define valve2        A2             
 
-#define neoMotorPin    44     //data pin for engine NeoPixel   - PWM
-#define neoHeadPin     45     //data pin for head light NeoPixel- PWM
+#define neoMotorPin    42     //data pin for engine NeoPixel   - PWM
+#define neoHeadPin     45    //data pin for head light NeoPixel- PWM
 #define neoBackPin     46     //data pin for back light  NeoPixel - PWM
 #define neoInteriorPin 10     //data pin for interior NeoPixel - PWM
 #define neoExhaostPin  11     //data pin for exhaost NeoPixel ring - PWM
 
 #define turnL          47     // turn signal left pin to activate turn relay
 #define turnR          48     // turn signal right pin to activate turn relay
+
+#define reversePin	    A14  // reverse white light when backwords with sound buzzer later
+#define redBrakesPin    A15   // when driving red. when stop flash for 10 sec then off 
 
 #define ldrmEn1         2      // left DRIVE motor
 #define ldrmEn2         3
@@ -66,6 +69,7 @@ void action();
 void turnIni();
 void turnLights(bool turnLOn, bool turnROn, bool turnFast); 
 void turnLights(bool L, bool R);
+void runNeoPixle();
 void neopixleIni();
 void nextSong(int i);
 
@@ -81,4 +85,6 @@ void driveForwardR(int pwm);
 void driveReverseL(int pwm);
 void driveReversR(int pwm);
 void neoMotorSnakeShow();
+void neoHeadSnakeShow();
+
 void stopAll();
